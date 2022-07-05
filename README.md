@@ -11,3 +11,12 @@ The project consists in a static webpage that have been implemented the light/da
 
 ## Extra
  - adaptive for any browser
+ 
+## Frontend
+
+![HOME-light-mode](screenshots/HOME-light-mode.png)
+![HOME-dark-mode](screenshots/HOME-dark-mode.png)
+![PROJECTS-1-dark.png](screenshots/PROJECTS-1-dark.png)
+![PROJECTS-2-dark.png](screenshots/PROJECTS-2-dark.png)
+![ABOUT-dark.png](screenshots/ABOUT-dark.png)
+![CONTACT-dark.png](screenshots/CONTACT-dark.png)
