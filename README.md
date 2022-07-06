@@ -14,7 +14,7 @@ The project consists in a static webpage that have been implemented the light/da
  - dockerfile make a container that can run the html page from docker
  
  
- ### Download the image from DockerHub
+## Download the image from DockerHub
  >`$ docker login`
 
  > `$ docker pull vhij/light-dark-mode:latest`
@@ -24,6 +24,10 @@ The project consists in a static webpage that have been implemented the light/da
  > `$ curl localhost:80`
  
  or copy `localhost:80` in your browser to visualize the beauty of css page.
+
+## AWS Amplify
+- CI/CD is made by using `main` branch of this repository to AWS Amplify. For routing I have used AWS Route 53 and `nameserver` was added to my hostname provider to acces Amplify using my name [Vasile Hij](https://www.vasilehij.com).
+
 
 ## Extra
  - adaptive for any browser size
@@ -44,3 +48,5 @@ The project consists in a static webpage that have been implemented the light/da
 ![CONTACT-dark](screenshots/CONTACT-dark.png)
 ## DOCKER TEST SAMPLE
 ![DOCKER-IMAGE](screenshots/docker-image.png)
+## Small display
+![SMALL-DISPLAY](screenshots/small-display.png)
