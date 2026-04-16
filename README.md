@@ -1,52 +1,36 @@
-# Light and Dark Mode
-The project consists in a static webpage that have been implemented the light/dark switch mode; additionally, navigation bar, buttons, images and a contact page are added to display the functionality of switching light/dark mode.
+# Vasile Hij — Personal Portfolio
+
+Personal portfolio site for Vasile Hij, Python Django developer. A Digital Wire Labs (DWL) company site.
+
+Live at [vasilehij.com](https://www.vasilehij.com)
 
 ## Stack
- - javascript
- - docker 
 
-### Features of javascript
-- toggle dark/light mode
-- infinite scroll
-- local storage on browser is used to retain the user option, so it will be used by default when the page it will be open next time. 
+- HTML5, CSS3, vanilla JavaScript
+- Nginx (local dev via Docker)
+- AWS Amplify (CI/CD + hosting)
+- AWS Route 53 (DNS)
+- Formspree (contact form)
 
-### Features of docker
- - dockerfile make a container that can run the html page from docker
- 
- 
-## Download the image from DockerHub
- >`$ docker login`
+## Features
 
- > `$ docker pull vhij/light-dark-mode:latest`
+- Light / dark mode toggle with localStorage persistence (dark by default)
+- Responsive layout — desktop nav collapses to hamburger menu on mobile
+- Tech stack displayed as categorised cards
+- Contact form powered by Formspree
+- Scroll-to-top / scroll-to-bottom button
+- No cookies, no tracking, no personal data collected
+- SEO meta tags + Open Graph + robots.txt + sitemap.xml
 
- > `$ docker run -d -p 80:80 vhij/light-dark-mode`
+## Local development
 
- > `$ curl localhost:80`
- 
- or copy `localhost:80` in your browser to visualize the beauty of css page.
+```bash
+docker compose up
+```
 
-## AWS Amplify
-- CI/CD is made by using `main` branch of this repository to AWS Amplify. For routing I have used AWS Route 53 and `nameserver` was added to my hostname provider to acces Amplify using my name [Vasile Hij](https://www.vasilehij.com).
+Open `http://localhost:8080`. Edit files locally and reload the browser to see changes. Nginx is configured with no-cache headers so changes are visible immediately on reload.
 
+## Deployment
 
-## Extra
- - adaptive for any browser size
- ---
-# Frontend
+CI/CD is handled by AWS Amplify watching the `main` branch. Pushing to `main` triggers an automatic deploy. DNS is managed via AWS Route 53.
 
-## HOME light mode
-![HOME-light-mode](screenshots/HOME-light-mode.png)
-## HOME dark mode
-![HOME-dark-mode](screenshots/HOME-dark-mode.png)
-## PROJECTS part 1
-![PROJECTS-1-dark](screenshots/PROJECTS-1-dark.png)
-## PROJECTS part 2
-![PROJECTS-2-dark](screenshots/PROJECTS-2-dark.png)
-## ABOUT
-![ABOUT-dark](screenshots/ABOUT-dark.png)
-## CONTACT
-![CONTACT-dark](screenshots/CONTACT-dark.png)
-## DOCKER TEST SAMPLE
-![DOCKER-IMAGE](screenshots/docker-image.png)
-## Small display
-![SMALL-DISPLAY](screenshots/small-display.png)

@@ -7,55 +7,77 @@ const image3 = document.getElementById('image3');
 const image4 = document.getElementById('image4');
 const textBox = document.getElementById('text-box');
 
-// Dark or Light Images
 function imageMode(color) {
-  image1.src = `img/weather_${color}.svg`;
-  image2.src = `img/charts_${color}.svg`;
-  image3.src = `img/light-dark_${color}.svg`;
-  image4.src = `img/quiz_${color}.svg`;
+    image1.src = `img/weather_${color}.svg`;
+    image2.src = `img/charts_${color}.svg`;
+    image3.src = `img/light-dark_${color}.svg`;
+    image4.src = `img/quiz_${color}.svg`;
 }
 
-// Dark Mode Styles
 function darkMode() {
-  nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
-  textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-  toggleIcon.children[0].textContent = 'DARK MODE';
-  toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
-  imageMode('dark');
+    textBox.style.backgroundColor = '';
+    toggleIcon.children[0].textContent = 'DARK MODE';
+    toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
+    imageMode('dark');
 }
 
-// Light Mode Styles
 function lightMode() {
-  nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-  textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
-  toggleIcon.children[0].textContent = 'LIGHT MODE';
-  toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-  imageMode('light');
+    textBox.style.backgroundColor = '';
+    toggleIcon.children[0].textContent = 'LIGHT MODE';
+    toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
+    imageMode('light');
 }
 
-// Switch Theme Dynamically
 function switchTheme(event) {
-  if (event.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    darkMode();
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-    lightMode();
-  }
+    if (event.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        darkMode();
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        lightMode();
+    }
 }
 
-// Event Listener
 toggleSwitch.addEventListener('change', switchTheme);
 
-// Check Local Storage For Theme
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-  document.documentElement.setAttribute('data-theme', currentTheme);
+const scrollBtn = document.getElementById('scroll-btn');
+const dropdownMenu = document.getElementById('dropdown-menu');
 
-  if (currentTheme === 'dark') {
+function toggleMenu(e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle('open');
+}
+
+function closeMenu() {
+    dropdownMenu.classList.remove('open');
+}
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.hamburger-wrapper')) {
+        closeMenu();
+    }
+});
+
+function toggleScroll() {
+    const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+    if (atBottom) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+}
+
+window.addEventListener('scroll', () => {
+    const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+    scrollBtn.innerHTML = atBottom ? '&#8593;' : '&#8595;';
+});
+
+const currentTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+if (currentTheme === 'dark') {
     toggleSwitch.checked = true;
     darkMode();
-  }
 }

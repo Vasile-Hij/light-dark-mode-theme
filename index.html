@@ -1,62 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vasile Hij Python Django Developer</title>
-    <meta name="python developer" content="Vasile Hij python developer django django rest framework developer"/>
-    <meta name="Vasile Hij" content="Vasile Hij is a python developer django react django rest framework crud restful api"/>
-    <meta property="og:title" content="Vasile Hij"/>
-    <meta property="og:type" content="Python Django Developer"/>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <title>Vasile Hij — Python Django Developer</title>
+    <meta name="description"
+        content="Vasile Hij is a Python Django developer specialising in RESTful APIs, data pipelines, containerised infrastructure, and IoT home-lab projects. A Digital Wire Labs (DWL) company site." />
+    <meta name="keywords"
+        content="Vasile Hij, Python developer, Django, Vue.js, Docker, Kubernetes, AWS, PostgreSQL, REST API, Digital Wire Labs, DWL" />
+    <meta property="og:title" content="Vasile Hij — Python Django Developer" />
+    <meta property="og:description"
+        content="Python Django developer building RESTful APIs, data pipelines, and containerised infrastructure. A Digital Wire Labs (DWL) company site." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vasilehij.com/" />
+    <link rel="icon" type="image/png" href="fav.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Dark Mode Switch -->
-    <div class="theme-switch-wrapper">
-        <span id="toggle-icon">
-            <span class="toggle-text">Light Mode</span>
-            <i class="fas fa-sun"></i>
-        </span>
-        <label class="theme-switch">
-            <input type="checkbox">
-            <div class="slider round"></div>
-        </label>
-   </div>
-   <!-- Navigation -->
     <nav id="nav">
-        <a href="#home">HOME</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
+        <div class="hamburger-wrapper">
+            <button class="hamburger" id="hamburger" onclick="toggleMenu(event)" aria-label="Menu">&#9776;</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="#about" onclick="closeMenu()">ABOUT</a>
+                <a href="#projects" onclick="closeMenu()">PROJECTS</a>
+                <a href="#contact" onclick="closeMenu()">CONTACT</a>
+                <a href="https://github.com/Vasile-Hij" target="_blank" title="GitHub"><i class="fab fa-github"></i>
+                    GitHub</a>
+                <a href="https://www.linkedin.com/in/vasile-hij/" target="_blank" title="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+            <a href="#projects" onclick="closeMenu()">PROJECTS</a>
+            <a href="https://github.com/Vasile-Hij" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/vasile-hij/" target="_blank" title="LinkedIn"><i
+                    class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+            <a href="https://github.com/Vasile-Hij" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/vasile-hij/" target="_blank" title="LinkedIn"><i
+                    class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="theme-switch-wrapper">
+            <span id="toggle-icon">
+                <span class="toggle-text">Light Mode</span>
+                <i class="fas fa-sun"></i>
+            </span>
+            <label class="theme-switch">
+                <input type="checkbox">
+                <div class="slider round"></div>
+            </label>
+        </div>
     </nav>
-    <!-- Home Section -->
     <section id="home">
         <div class="title-group">
-            <h1>Vasile Hij</h1>
-            <h1>Python Django developer</h1>
-            <h2>Welcome to my portofolio!</h2>
+            <h3>Welcome to my portofolio!</h3>
+            <h1>Vasile Hij - Python Django developer</h1>
         </div>
     </section>
-    <!-- Projects Section -->
+    <section id="about">
+        <div class="text-box" id="text-box">
+            <p>I build backend systems with Python and Django, designing RESTful APIs, data pipelines with Pandas and
+                Airflow, and relational schemas on MySQL. On the frontend I work with Vue.js and vanilla JavaScript,
+                keeping the interface functional and responsive without over-engineering it.</p>
+            <p>On the infrastructure side I containerize workloads with Docker, orchestrate them on Kubernetes (K8s and
+                K3s), and deploy to AWS and Hetzner from a Linux-first environment. I manage source control through Git
+                with GitHub and Bitbucket, track work in Jira and Confluence, and validate APIs with Postman before they
+                ship.</p>
+            <p>Beyond the day job I run a home lab where I self-host services on Proxmox, manage storage with TrueNAS
+                and Synology, automate the network with Omada, and prototype IoT devices using ESP32 and Arduino under
+                Home Assistant. Golang and C++ come in handy at the lower levels of that stack.</p>
+        </div>
+        <h1>My stack</h1>
+        <div class="stack-categories">
+            <div class="stack-category cat-1">
+                <div class="category-header">Languages &amp; Frameworks</div>
+                <div class="category-items">
+                    <span>Python</span><span>Django</span><span>Vue.js</span><span>JS</span><span>CSS</span><span>C++</span><span>Golang</span>
+                </div>
+            </div>
+            <div class="stack-category cat-2">
+                <div class="category-header">Data &amp; Analytics</div>
+                <div class="category-items">
+                    <span>SQL</span><span>MySQL</span><span>PostgreSQL</span><span>Percona</span><span>InnoDB</span><span>Pandas</span><span>Redis</span>
+                </div>
+            </div>
+            <div class="stack-category cat-3">
+                <div class="category-header">DevOps &amp; Containers</div>
+                <div class="category-items">
+                    <span>Docker</span><span>K8s</span><span>K3s</span><span>Airflow</span><span>Celery</span><span>RabbitMQ</span>
+                </div>
+            </div>
+            <div class="stack-category cat-4">
+                <div class="category-header">Cloud &amp; Infrastructure</div>
+                <div class="category-items">
+                    <span>AWS</span><span>Hetzner</span><span>Minio</span><span>Linux</span><span>MacOS</span><span>WSL
+                        2</span>
+                </div>
+            </div>
+            <div class="stack-category cat-5">
+                <div class="category-header">Tools &amp; Collaboration</div>
+                <div class="category-items">
+                    <span>Git</span><span>GitHub</span><span>Bitbucket</span><span>Jira</span><span>Confluence</span><span>Postman</span><span>Grafana</span><span>Other
+                        tools</span>
+                </div>
+            </div>
+            <div class="stack-category cat-6">
+                <div class="category-header">IoT &amp; Home Lab</div>
+                <div class="category-items">
+                    <span>ESP32</span><span>Arduino</span><span>Home
+                        Assistant</span><span>Proxmox</span><span>Omada</span><span>TrueNAS</span><span>Synology</span>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="projects">
         <h1>GitHub repos</h1>
         <div class="projects-container">
+
             <div class="image-container">
-                <a href="https://github.com/Vasile-Hij/django-react" target="_blank" title="Web app Django Rest Framework with React">
-                    <h2>Django React App</h2>
+                <h2>Python data structure and algorithms</h2>
+                <a href="https://github.com/Vasile-Hij/advent_of_code_puzzle" target="_blank" title="Advent of Code">
+
                     <img src="img/weather_light.svg" alt="Django React" id="image1">
                 </a>
             </div>
             <div class="image-container">
-                <a href="https://github.com/Vasile-Hij/excels-pandas/blob/main/excels-pandas.ipynb" target="_blank" title="Pandas with Jupyter">
+                <a href="https://github.com/Vasile-Hij/excels-pandas/blob/main/excels-pandas.ipynb" target="_blank"
+                    title="Pandas with Jupyter">
                     <h2>Pandas with Jupyter</h2>
                     <img src="img/charts_light.svg" alt="Pandas with Jupyter" id="image2">
-                </a>              
+                </a>
             </div>
             <div class="image-container">
-                <a href="https://github.com/Vasile-Hij/light-dark-mode-theme" target="_blank" title="Light Dark Mode Website Theme">
+                <a href="https://github.com/Vasile-Hij/light-dark-mode-theme" target="_blank"
+                    title="Light Dark Mode Website Theme">
                     <h2>Light/Dark mode app</h2>
                     <img src="img/light-dark_light.svg" alt="Light Dark Mode Website Theme" id="image3">
                 </a>
@@ -69,47 +151,22 @@
             </div>
         </div>
     </section>
-    <!-- About Section -->
-    <section id="about">
-        <h1>My stack</h1>
-        <div class="buttons">
-            <button class="outline">Python</button>
-            <button class="outline">OOP</button>
-            <button class="outline">Django</button>
-            <button class="outline">Djago RF</button>
-            <button class="outline">React</button>
-            <button class="outline">Postgres</button>
-        </div>
-        <div class="buttons">
-            <button class="secondary">Linux</button>
-            <button class="secondary">Docker</button>
-            <button class="secondary">Git</button>
-            <button class="secondary">GitHub</button>
-            <button class="secondary">AWS</button>
-            <button class="secondary">Postman</button>
-        </div>
-
-        <div class="text-box" id="text-box">
-            <p>During my journey to become a web developer I have learned Python with algorithms and data structures, then basic Javascript. I added to my stack frameworks such as Flask and Django, then the last one become one of my favorite, where I continued to expand to RESTful API with Django Rest Framework. I have found that React makes things easier for frontend, so I entered in the world of frontend completed by previous skills for HTML5 and CSS.</p>
-            <p>I am familiar with SQL database such as PostgreSQL or SQLite, and looking to expand to NoSQL with MongoDB and cloud DB: Amazon DynamoDB (fully managed NoSQL) and Amazon Aurora (RDBMS)</p>
-            <p>For version control I use git and GitHub, Docker for containers, AWS for hosting websites all of this made from Linux environment.I test endpoints using Postman.</p>
-            <p>Passionate about mountain biking so check my Strava account down below.</p>
-        </div>
-    </section>
-    <!-- Contact Section -->
     <section id="contact">
-        <h1>More things about me</h1>
-        <div class="social-icons">
-            <a href="https://github.com/Vasile-Hij" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/vasile-hij/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://vasilehij.medium.com/" target="_blank"><i class="fab fa-medium"></i></a>
-            <a href="https://www.strava.com/athletes/1906872" target="_blank"><i class="fab fa-strava"></i></a>
-        </div>
-        <div class="footer">
-            <h4>2022 by Vasile Hij</h4>
-        </div>
+        <h1>Contact</h1>
+        <form class="contact-form" action="https://formspree.io/f/mbdqgldo" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+            <button type="submit" class="primary">Send message</button>
+        </form>
     </section>
-    <!-- Script -->
+    <footer class="footer">
+        <h5>This site does not collect cookies, tracking data, or any personal information.</h5>
+        <h5>&nbsp;</h5>
+        <h5>© 2026 vasilehij.com - a Digital Wire Labs (DWL) company site</h5>
+    </footer>
+    <button id="scroll-btn" onclick="toggleScroll()" title="Scroll">&#8595;</button>
     <script src="script.js"></script>
 </body>
+
 </html>
